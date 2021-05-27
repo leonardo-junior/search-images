@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import InfiniteScroll from "react-infinite-scroller";
 
 // components
@@ -14,7 +14,7 @@ function Home() {
   const [totalImages, setTotalImagens] = useState(null);
   const [pageNow, setPageNow] = useState(1);
 
-  const searchInput = useRef("");
+  const [searchInput, setSearchInput] = useState("");
 
   function handleModal(url) {
     setShowModal(url);
@@ -25,23 +25,28 @@ function Home() {
   }
 
   function handleInputText(event) {
-    searchInput.current = event.target.value;
+    setSearchInput(event.target.value);
   }
 
   function handleSearchClick() {
+    toTheTop();
     setPageNow(1);
     createData(1, []);
   }
 
+  function toTheTop() {
+    window.scrollTo(0, 0);
+  }
+
   function createData(page = 1, array = imagesData) {
     try {
-      const url = `https://pixabay.com/api/?key=21774120-7809fe0f002d0dff77473de06&q=${searchInput.current}&image_type=all&order=latest&page=${page}`;
+      const url = `https://pixabay.com/api/?key=21774120-7809fe0f002d0dff77473de06&q=${searchInput}&image_type=all&order=latest&page=${page}`;
       async function fetchData() {
         const response = await fetch(url);
         const allImages = await response.json();
         const newImagesData = [...array, ...allImages.hits];
         setTotalImagens(allImages.total);
-        setPageNow(pageNow + 1);
+        setPageNow((prevPageNow) => prevPageNow + 1);
         setImageData(newImagesData);
         setIsLoading(false);
       }
