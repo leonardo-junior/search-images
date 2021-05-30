@@ -48,7 +48,7 @@ function Home() {
       );
       const allImages = await response.json();
       const newImagesData = [...array, ...allImages.hits];
-      setTotalImagens(allImages.total);
+      setTotalImagens(allImages.totalHits);
       setPageNow((prevPageNow) => prevPageNow + 1);
       setImageData(newImagesData);
       setIsLoading(false);
@@ -68,8 +68,8 @@ function Home() {
     ));
 
   const hasMore =
-    totalImages &&
-    totalImages > imagesData.length &&
+    !!totalImages &&
+    totalImages >= imagesData.length &&
     !isLoading &&
     imagesData.length !== 0;
 
