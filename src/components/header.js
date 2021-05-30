@@ -1,12 +1,9 @@
-import lupa from "../images/lupa.svg";
+import style from "../styles/header.module.css";
 
 function Header() {
   return (
-    <div className="header">
+    <div className={style.header}>
       <div>
-        <a href="/">
-          <img src={lupa} alt="logo" />
-        </a>
         <h1>SEARCH TECH</h1>
       </div>
       <h2>

@@ -1,18 +1,16 @@
-import lupa from "../images/lupa-search.png";
+import style from "../styles/insert.module.css";
 
 function Insert(props) {
   return (
-    <section className="insert">
+    <section className={style.insert}>
       <header>
-        Pesquise suas imagens, serão carregadas imagens reduzidas. Para imagem
+        Pesquise suas imagens, serão carregadas imagens reduzidas. Para versão
         completa clique na imagem.
       </header>
-      <div>
+      <form onSubmit={props.click}>
         <input type="text" placeholder="Pesquisar" onChange={props.change} />
-        <button onClick={props.click}>
-          <img src={lupa} alt="search" />
-        </button>
-      </div>
+        <input type="submit" value="pesquisar" />
+      </form>
     </section>
   );
 }

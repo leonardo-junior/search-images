@@ -1,11 +1,12 @@
 import { useState } from "react";
 import InfiniteScroll from "react-infinite-scroller";
+import style from "../styles/home.module.css";
 
 // components
-import InsertValueSearch from "../components/insert.js";
-import Images from "../components/image.js";
-import Modal from "../components/modal.js";
-import Loading from "../components/loading.js";
+import InsertValueSearch from "./insert";
+import Images from "./image";
+import Modal from "./modal";
+import Loading from "./loading";
 
 function Home() {
   const [imagesData, setImageData] = useState([]);
@@ -28,31 +29,29 @@ function Home() {
     setSearchInput(event.target.value);
   }
 
-  function handleSearchClick() {
+  function handleSearchSubmit(event) {
+    event.preventDefault();
     toTheTop();
     setPageNow(1);
     createData(1, []);
   }
 
   function toTheTop() {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 188);
   }
 
-  function createData(page = 1, array = imagesData) {
+  async function createData(page = 1, array = imagesData) {
+    setIsLoading(true);
     try {
-      const url = `https://pixabay.com/api/?key=21774120-7809fe0f002d0dff77473de06&q=${searchInput}&image_type=all&order=latest&page=${page}`;
-      async function fetchData() {
-        const response = await fetch(url);
-        const allImages = await response.json();
-        const newImagesData = [...array, ...allImages.hits];
-        setTotalImagens(allImages.total);
-        setPageNow((prevPageNow) => prevPageNow + 1);
-        setImageData(newImagesData);
-        setIsLoading(false);
-      }
-
-      setIsLoading(true);
-      fetchData();
+      const response = await fetch(
+        `/api/search?searchTerm=${searchInput}&page=${page}`
+      );
+      const allImages = await response.json();
+      const newImagesData = [...array, ...allImages.hits];
+      setTotalImagens(allImages.total);
+      setPageNow((prevPageNow) => prevPageNow + 1);
+      setImageData(newImagesData);
+      setIsLoading(false);
     } catch (error) {
       console.log(error.message);
     }
@@ -75,8 +74,8 @@ function Home() {
     imagesData.length !== 0;
 
   return (
-    <div>
-      <InsertValueSearch click={handleSearchClick} change={handleInputText} />
+    <div className={style.home}>
+      <InsertValueSearch click={handleSearchSubmit} change={handleInputText} />
       <InfiniteScroll
         pageStart={1}
         loadMore={() => {
@@ -85,8 +84,7 @@ function Home() {
           }
           createData(pageNow);
         }}
-        hasMore={hasMore}
-        // useWindow={false}
+        hasMore={typeof hasMore !== "number" ? hasMore : false}
       >
         <div>{imagesDOM}</div>
       </InfiniteScroll>

@@ -1,10 +1,9 @@
-function Modal (props) {
+import style from "../styles/modal.module.css";
+
+function Modal(props) {
   return (
-    <div className="modal">
-      <img
-        src={props.modalImage}
-        alt="img-complete-version"
-      />
+    <div className={style.modal}>
+      <img src={props.modalImage} alt="img-complete-version" />
       <button onClick={props.close}>X</button>
     </div>
   );
