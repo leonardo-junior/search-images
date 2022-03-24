@@ -1,16 +1,20 @@
+// vendors
 import { useState } from "react";
 import InfiniteScroll from "react-infinite-scroller";
-import style from "../styles/home.module.css";
 
 // components
 import InsertValueSearch from "./insert";
 import Images from "./image";
 import Modal from "./modal";
 import Loading from "./loading";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+
+// styles
+import style from "../styles/home.module.css";
 
 function Home() {
   const [imagesData, setImageData] = useState([]);
-  const [showModal, setShowModal] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [totalImages, setTotalImagens] = useState(null);
   const [pageNow, setPageNow] = useState(1);
@@ -18,11 +22,11 @@ function Home() {
   const [searchInput, setSearchInput] = useState("");
 
   function handleModal(url) {
-    setShowModal(url);
+    setIsModalOpen(url);
   }
 
   function handleCloseModal() {
-    setShowModal(false);
+    setIsModalOpen(false);
   }
 
   function handleInputText(event) {
@@ -65,7 +69,7 @@ function Home() {
         showImage={obj.webformatURL}
         click={() => handleModal(obj.largeImageURL)}
       />
-    ));
+    ))
 
   const hasMore =
     !!totalImages &&
@@ -86,10 +90,14 @@ function Home() {
         }}
         hasMore={typeof hasMore !== "number" ? hasMore : false}
       >
-        <div>{imagesDOM}</div>
+        <ResponsiveMasonry columnsCountBreakPoints={{350: 1, 750: 2, 900: 3, 1250: 4}}>
+          <Masonry>
+            {imagesDOM}
+          </Masonry>
+        </ResponsiveMasonry>
       </InfiniteScroll>
       {isLoading && <Loading />}
-      {showModal && <Modal modalImage={showModal} close={handleCloseModal} />}
+      {isModalOpen && <Modal modalImage={isModalOpen} close={handleCloseModal} />}
     </div>
   );
 }

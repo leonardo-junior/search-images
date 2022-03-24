@@ -12,13 +12,15 @@
 
 .modal img {
   max-height: 90%;
-  max-width: 100%;
 }
 
 .modal button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  border-radius: 1rem;
-  border: double;
+  border-radius: 0.5rem;
+  border: none;
   color: white;
   font-size: 2rem;
   background-color: #0000;
@@ -28,3 +30,9 @@
   right: 3rem;
   top: 1rem;
 }
+
+.modal button:hover {
+  background-color: rgba(119, 119, 119, 0.350);
+  transform: scale(1.1);
+}
+
