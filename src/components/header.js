@@ -1,4 +1,5 @@
-import style from "../styles/header.module.css";
+//styles
+import style from "../styles/header.module.css"
 
 function Header() {
   return (
@@ -11,7 +12,7 @@ function Header() {
         prática
       </h2>
     </div>
-  );
+  )
 }
 
-export default Header;
+export default Header

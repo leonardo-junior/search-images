@@ -1,14 +1,15 @@
-import style from "../styles/image.module.css";
+// styles
+import style from "../styles/image.module.css"
 
-function Image(props) {
+function Image({showImage, click}) {
   return (
     <img
       className={style.image}
-      src={props.showImage}
+      src={showImage}
       alt="imagem não disponível"
-      onClick={props.click}
+      onClick={click}
     />
-  );
+  )
 }
 
-export default Image;
+export default Image

@@ -4,11 +4,12 @@ import { VscChromeClose } from 'react-icons/vsc'
 // styles
 import style from "../styles/modal.module.css";
 
-function Modal(props) {
+function Modal({ modalImage, close }) {
   return (
     <div className={style.modal}>
-      <img src={props.modalImage} alt="img-complete-version" />
-      <button onClick={props.close}><VscChromeClose /></button>
+      <img src={modalImage} alt="imagem completa" />
+
+      <button onClick={close}><VscChromeClose /></button>
     </div>
   )
 }

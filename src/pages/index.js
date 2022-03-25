@@ -2,14 +2,14 @@
 import Head from 'next/head'
 
 // components
-import Footer from "../components/footer";
-import Header from "../components/header";
-import Home from "../components/home";
+import Footer from "../components/footer"
+import Header from "../components/header"
+import Home from "../components/home"
 
 // styles
-import style from "../styles/index.module.css";
+import style from "../styles/index.module.css"
 
-export default function HomePage() {
+function HomePage() {
   return (
     <>
       <Head>
@@ -25,3 +25,5 @@ export default function HomePage() {
     </>
   )
 }
+
+export default HomePage
