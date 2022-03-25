@@ -4,15 +4,15 @@
   justify-content: center;
   align-items: center;
   position: fixed;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   left: 0;
   top: 0;
 }
 
 .modal img {
-  max-height: 80%;
-  max-width: 90%;
+  max-height: 85%;
+  max-width: 95%;
   background-color: rgb(228, 228, 228);
 }
 
@@ -20,21 +20,37 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  border-radius: 0.5rem;
-  border: none;
-  color: white;
-  font-size: 2rem;
-  background-color: #0000;
-  height: 3rem;
-  width: 3rem;
+  padding: 0;
+  height: 2.5rem;
+  width: 2.5rem;
   position: absolute;
-  right: 3rem;
+  right: 1rem;
   top: 1rem;
+  background-color: #0000;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.modal button svg{
+  font-size: 2rem;
 }
 
 .modal button:hover {
   background-color: rgba(119, 119, 119, 0.350);
   transform: scale(1.1);
+}
+
+@media screen and (min-width: 768px) {
+  .modal img {
+    max-height: 95%;
+    max-width: 85%;
+  }
+
+  .modal button {
+    height: 3rem;
+    width: 3rem;
+  }
 }
 
