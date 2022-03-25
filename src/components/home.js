@@ -1,5 +1,5 @@
 // vendors
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import InfiniteScroll from "react-infinite-scroller"
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 
@@ -46,6 +46,7 @@ function Home() {
 
   async function createData(page = 1, array = imagesData) {
     setIsLoading(true)
+
     try {
       const response = await fetch(
         `/api/search?searchTerm=${searchInput}&page=${page}`
@@ -58,9 +59,13 @@ function Home() {
       setImageData(newImagesData)
       setIsLoading(false)
     } catch (error) {
-      console.log(error.message)
+      throw new Error(error)
     }
   }
+
+  useEffect(()=>{
+    createData(1)
+  }, [])
 
   const imagesDOM =
     imagesData &&
