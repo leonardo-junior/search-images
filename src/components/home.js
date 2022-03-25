@@ -80,6 +80,7 @@ function Home() {
   return (
     <div className={style.home}>
       <InsertValueSearch click={handleSearchSubmit} change={handleInputText} />
+
       <InfiniteScroll
         pageStart={1}
         loadMore={() => {
@@ -90,7 +91,7 @@ function Home() {
         }}
         hasMore={typeof hasMore !== "number" ? hasMore : false}
       >
-        <ResponsiveMasonry columnsCountBreakPoints={{350: 1, 750: 2, 900: 3, 1250: 4}}>
+        <ResponsiveMasonry className={style.imageContainer} columnsCountBreakPoints={{350: 1, 750: 2, 900: 3, 1250: 4}} >
           <Masonry>
             {imagesDOM}
           </Masonry>

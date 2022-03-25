@@ -1,5 +1,5 @@
-.index {
-  background-color: antiquewhite;
+.container {
+  background: rgb(250, 250, 250);;
   min-height: 100vh;
   margin: 0;
   padding: 0;
