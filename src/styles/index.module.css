@@ -6,3 +6,9 @@
   display: flex;
   flex-direction: column;
 }
+
+.container > div {
+  background-image: url('../../public/background-dark-mode.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

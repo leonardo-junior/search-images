@@ -4,7 +4,7 @@ import InfiniteScroll from "react-infinite-scroller"
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 
 // components
-import InsertValueSearch from "./insert"
+import InsertValueSearch from "./search"
 import Images from "./image"
 import Modal from "./modal"
 import Loading from "./loading"
