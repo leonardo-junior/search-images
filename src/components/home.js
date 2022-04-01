@@ -59,7 +59,8 @@ function Home() {
       setImageData(newImagesData)
       setIsLoading(false)
     } catch (error) {
-      throw new Error(error)
+      console.log("Erro: ", error)
+      setIsLoading(false)
     }
   }
 
@@ -79,7 +80,7 @@ function Home() {
 
   const hasMore =
     !!totalImages &&
-    totalImages >= imagesData.length &&
+    totalImages > imagesData.length &&
     !isLoading &&
     imagesData.length !== 0
 
