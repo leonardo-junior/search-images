@@ -1,14 +1,8 @@
 .container {
-  background: rgb(250, 250, 250);;
+  background-color: #00121a;
   min-height: 100vh;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-}
-
-.container > div {
-  background-image: url('../../public/background-dark-mode.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
 }
