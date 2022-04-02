@@ -22,10 +22,12 @@ function Home() {
   const [searchInput, setSearchInput] = useState("")
 
   function handleModal(url) {
+    document.body.classList.add('disable-scroll')
     setIsModalOpen(url)
   }
 
   function handleCloseModal() {
+    document.body.classList.remove('disable-scroll')
     setIsModalOpen(false)
   }
 
