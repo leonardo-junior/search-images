@@ -15,6 +15,7 @@ import style from "../styles/home.module.css"
 function Home() {
   const [imagesData, setImageData] = useState([])
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [image, setImage] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const [totalImages, setTotalImagens] = useState(null)
   const [pageNow, setPageNow] = useState(1)
@@ -23,7 +24,8 @@ function Home() {
 
   function handleModal(url) {
     document.body.classList.add('disable-scroll')
-    setIsModalOpen(url)
+    setIsModalOpen(!isModalOpen)
+    setImage(url)
   }
 
   function handleCloseModal() {
@@ -113,7 +115,7 @@ function Home() {
 
       {isLoading && <Loading />}
 
-      {isModalOpen && <Modal modalImage={isModalOpen} close={handleCloseModal} />}
+      {isModalOpen && <Modal modalImage={image} close={handleCloseModal} />}
     </div>
   )
 }
