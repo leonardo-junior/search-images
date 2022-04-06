@@ -1,9 +1,9 @@
 //styles
-import style from "../styles/header.module.css"
+import styles from "../styles/Header.module.css"
 
 function Header() {
   return (
-    <div className={style.header}>
+    <div className={styles.header}>
       <h1>Search Tech</h1>
       <h2>
         Pesquise suas imagens de diferentes temas de forma dinâmica e

@@ -1,10 +1,10 @@
 // styles
-import style from "../styles/image.module.css"
+import styles from "../styles/Image.module.css"
 
 function Image({showImage, click}) {
   return (
     <img
-      className={style.image}
+      className={styles.image}
       src={showImage}
       alt="imagem não disponível"
       onClick={click}

@@ -1,9 +1,9 @@
 // styles
-import style from "../styles/loading.module.css"
+import styles from "../styles/Loading.module.css"
 
 function Loading() {
   return (
-    <div className={style.loading}>
+    <div className={styles.loading}>
       <img src="loader.gif" alt="carregando imagem" />
     </div>
   )

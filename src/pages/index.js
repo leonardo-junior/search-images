@@ -2,12 +2,12 @@
 import Head from 'next/head'
 
 // components
-import Footer from "../components/footer"
-import Header from "../components/header"
-import Home from "../components/home"
+import Footer from "../components/Footer"
+import Header from "../components/Header"
+import Home from "../components/Home"
 
 // styles
-import style from "../styles/index.module.css"
+import styles from "../styles/index.module.css"
 
 function HomePage() {
   return (
@@ -17,7 +17,7 @@ function HomePage() {
         <meta name="description" content='Site para pesquisa de imagens' />
       </Head>
 
-      <div className={style.container}>
+      <div className={styles.container}>
         <Header />
         <Home />
         <Footer />

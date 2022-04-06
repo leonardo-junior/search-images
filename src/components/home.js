@@ -4,13 +4,13 @@ import InfiniteScroll from "react-infinite-scroller"
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 
 // components
-import InsertValueSearch from "./search"
-import Images from "./image"
-import Modal from "./modal"
-import Loading from "./loading"
+import InsertValueSearch from "./Search"
+import Images from "./Image"
+import Modal from "./Modal"
+import Loading from "./Loading"
 
 // styles
-import style from "../styles/home.module.css"
+import styles from "../styles/Home.module.css"
 
 function Home() {
   const [imagesData, setImageData] = useState([])
@@ -89,7 +89,7 @@ function Home() {
     imagesData.length !== 0
 
   return (
-    <div className={style.container}>
+    <div className={styles.container}>
       <InsertValueSearch onSubmit={handleSearchSubmit} onChange={handleInputText} />
 
       <InfiniteScroll
@@ -104,7 +104,7 @@ function Home() {
         hasMore={typeof hasMore !== "number" ? hasMore : false}
       >
         <ResponsiveMasonry
-          className={style.imageContainer}
+          className={styles.imageContainer}
           columnsCountBreakPoints={{350: 1, 750: 2, 900: 3, 1250: 4}}
         >
           <Masonry>

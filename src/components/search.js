@@ -2,11 +2,11 @@
 import { FiSearch } from 'react-icons/fi'
 
 // styles
-import style from "../styles/search.module.css"
+import styles from "../styles/Search.module.css"
 
 function Search({ onSubmit, onChange }) {
   return (
-    <form className={style.form} onSubmit={onSubmit}>
+    <form className={styles.form} onSubmit={onSubmit}>
       <button type="submit" value="pesquisar">
         <FiSearch/>
       </button>
