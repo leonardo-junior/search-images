@@ -10,7 +10,8 @@
     "react-infinite-scroller": "^1.2.4",
     "react-responsive-masonry": "^2.1.4",
     "saas": "^1.0.0",
-    "sass": "^1.49.9"
+    "sass": "^1.49.9",
+    "typescript": "^4.6.3"
   },
   "scripts": {
     "dev": "next dev",

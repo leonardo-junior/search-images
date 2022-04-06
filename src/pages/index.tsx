@@ -7,9 +7,9 @@ import Header from "../components/Header"
 import Home from "../components/Home"
 
 // styles
-import styles from "../styles/index.module.css"
+import styles from "../styles/index.module.scss"
 
-function HomePage() {
+function HomePage (): JSX.Element {
   return (
     <>
       <Head>
