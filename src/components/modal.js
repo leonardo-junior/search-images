@@ -2,7 +2,7 @@
 import { VscChromeClose } from 'react-icons/vsc'
 
 // styles
-import styles from "../styles/Modal.module.css";
+import styles from "../styles/Modal.module.scss";
 
 function Modal({ modalImage, close }) {
   return (

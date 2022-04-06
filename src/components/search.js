@@ -2,7 +2,7 @@
 import { FiSearch } from 'react-icons/fi'
 
 // styles
-import styles from "../styles/Search.module.css"
+import styles from "../styles/Search.module.scss"
 
 function Search({ onSubmit, onChange }) {
   return (

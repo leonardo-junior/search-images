@@ -1,0 +1,45 @@
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: -5rem;
+  margin: 0 auto;
+  width: 80%;
+  background-color: rgba(240, 248, 255, 0.812);
+  border-radius: 5px;
+
+  input {
+    height: 1.5rem;
+    width: 85%;
+    margin: 0.25rem;
+    background-color: transparent;
+    outline: 0;
+    border: none;
+    cursor: text;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    border-right: 1px solid rgba(240, 248, 255, 0.812);
+    cursor: pointer;
+    width: 15%;
+    margin:0;
+    padding: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 40rem;
+
+    input {
+      width: 85%;
+    }
+
+    button {
+      width: 10%;
+    }
+  }
+}

@@ -10,7 +10,7 @@ import Modal from "./Modal"
 import Loading from "./Loading"
 
 // styles
-import styles from "../styles/Home.module.css"
+import styles from "../styles/Home.module.scss"
 
 function Home() {
   const [imagesData, setImageData] = useState([])

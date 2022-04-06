@@ -1,5 +1,5 @@
 // styles
-import styles from "../styles/Loading.module.css"
+import styles from "../styles/Loading.module.scss"
 
 function Loading() {
   return (

@@ -1,5 +1,5 @@
 // styles
-import styles from "../styles/Image.module.css"
+import styles from "../styles/Image.module.scss"
 
 function Image({showImage, click}) {
   return (
